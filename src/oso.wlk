@@ -1,4 +1,19 @@
 import wollok.game.*
+
+object oso {
+	var property position = new Position(x = 3, y = 3)
+	var property image =  "spot.png"
+
+
+	method moverEnDireccion(direccion){
+		self.position(direccion.siguientePosicion(self.position()))
+	}
+
+}
+
+
+/* 
+import wollok.game.*
 import cultivos.*
 
 
@@ -14,3 +29,4 @@ object oso {
 	}
 	
 }
+*/

@@ -2,38 +2,51 @@ import wollok.game.*
 import hector.*
 import cultivos.*
 import oso.*
+import juegos.*
+import direcciones.*
 
 program farmville {
-	var property jugadorActual
+	
 	
 	
 	
 	//  CONFIG	
 	game.title("FarmVille")
-	game.height(10)   	// altura
-	game.width(10)
+	game.height(10)   	// altura o filas
+	game.width(10)		// columnas
 	game.ground("ground.png")
 
 	//  VISUALES
- 	game.addVisualCharacter(hector) // "Character"  le da movimiento 
- 	game.addVisualIn(new Maiz(), game.at(1, 1))  // no mueve 
+ 	//game.addVisualCharacter(hector) // "Character"  le da movimiento 
+ 	//game.addVisualIn(new Maiz(), game.at(1, 1))  // no mueve 
  	
- 	//  COMIENZA
-	game.start()
 	
 	// CONTROL DE TECLADO
-	keyboard.a().onPressDo({game.say(hector,"hola gente")})
-	keyboard.o().onPressDo({hector.position(new Position(x=0 , y=0))})
-	keyboard.m().onPressDo({hector.plantarMaiz()})
-	keyboard.c().onPressDo({hector.cosecharPlanta()})
-	keyboard.s().onPressDo({
-		game.say(hector,
-			"tengo cosechadas" + "hector.cantidadDePlantasCosechadas()" + "plantas"
-		)
-	})
+	//keyboard.a().onPressDo({game.say(hector,"hola gente")})
+	//keyboard.o().onPressDo({hector.position(new Position(x=0 , y=0))})
+	//keyboard.m().onPressDo({hector.plantarMaiz()})
+	//keyboard.c().onPressDo({hector.cosecharPlanta()})
+	//keyboard.s().onPressDo({
+		//game.say(hector,
+		//	"tengo cosechadas" + "hector.cantidadDePlantasCosechadas()" + "plantas"
+		//)
+	//})
 	
 	//COLISIONES
-	game.whenCollideDo(oso, {objeto => objeto.teChocoElOso()})
+	//game.whenCollideDo(oso, {objeto => objeto.teChocoElOso()})
 	
+	//  COMIENZA
+	
+			
+	// VISUALES
+	juegoGranja.configurarPersonajes()
+	
+	//CONTROL TECLADO
+	juegoGranja.configurarTeclado()
+	
+	//CONFIGURAR COLISIONES
+	//juegoGranja.configurarColisiones()
+	//pablogerez2000@gmail.com
+	game.start()
 	
 }
